@@ -1,0 +1,439 @@
+{
+  "info": {
+    "_postman_id": "b82bd02f-f850-4bdd-b508-f3931baa0db9",
+    "name": "Jplus Portfolio API Copy 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20780273",
+    "_collection_link": "https://go.postman.co/collection/20780273-b82bd02f-f850-4bdd-b508-f3931baa0db9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "EDIS",
+      "item": [
+        {
+          "name": "ON Market",
+          "item": [
+            {
+              "name": "GetSettlementDatesOnMarket",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Secret",
+                    "value": "{{secretToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"DateCount\": 1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}EDIS/GetSettlementDatesOnMarket",
+                  "host": [
+                    "{{BaseURL}}EDIS"
+                  ],
+                  "path": [
+                    "GetSettlementDatesOnMarket"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CheckMarketHoliday",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "secret",
+                    "value": "{{secretToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n      \"TransType\":\"ON\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}EDIS/CheckMarketHoliday",
+                  "host": [
+                    "{{BaseURL}}EDIS"
+                  ],
+                  "path": [
+                    "CheckMarketHoliday"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "OFF Market",
+          "item": [
+            {
+              "name": "GetDematNameByBOID",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "secret",
+                    "value": "{{secretToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tradingCode\": \"wa5320\",\n  \"boid\": \"1204150002712769\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}EDIS/GetDematNameByBOID",
+                  "host": [
+                    "{{BaseURL}}EDIS"
+                  ],
+                  "path": [
+                    "GetDematNameByBOID"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GenerateTPIN",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Secret",
+                    "value": "{{secretToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountId\": 0,\n  \"boid\": \"1204150003584587\",\n  \"pan\": \"HQTPD6554A\",\n  \"tradingCode\": \"wa6184\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}EDIS/GenerateTPIN",
+                  "host": [
+                    "{{BaseURL}}EDIS"
+                  ],
+                  "path": [
+                    "GenerateTPIN"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Holding",
+          "item": [
+            {
+              "name": "GetHoldingsByBoId",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "secret",
+                    "value": "{{secretToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"boId\": \"1204150002766893\",\n  \"clientCode\": \"Dk2402647\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BaseURL}}EDIS/GetHoldingsByBoId",
+                  "host": [
+                    "{{BaseURL}}EDIS"
+                  ],
+                  "path": [
+                    "GetHoldingsByBoId"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "GetClientDematDetails",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "accept-language",
+                "value": "en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7"
+              },
+              {
+                "key": "content-type",
+                "value": "text/plain"
+              },
+              {
+                "key": "origin",
+                "value": "https://uatjplus.jainam.in"
+              },
+              {
+                "key": "priority",
+                "value": "u=1, i"
+              },
+              {
+                "key": "referer",
+                "value": "https://uatjplus.jainam.in/PartnerDashboard/bulkPrinting"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"148\", \"Google Chrome\";v=\"148\", \"Not/A)Brand\";v=\"99\""
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?1"
+              },
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Android\""
+              },
+              {
+                "key": "sec-fetch-dest",
+                "value": "empty"
+              },
+              {
+                "key": "sec-fetch-mode",
+                "value": "cors"
+              },
+              {
+                "key": "sec-fetch-site",
+                "value": "same-origin"
+              },
+              {
+                "key": "secret",
+                "value": "{{bearer_token}}"
+              },
+              {
+                "key": "user-agent",
+                "value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36"
+              },
+              {
+                "key": "Cookie",
+                "value": "_twpid=tw.1791432697347.685258555997024262; _fbp=fb.1.1791455320974.424274916951658302; _ga=GA1.1.606094149.1790740989; _twsid=1791956824187-577165619.9.1791956845887; _ga_EH9C25J2WZ=GS2.1.s1792648272^$o7^$g0^$t1792648272^$j60^$l0^$h0; _ga_F4SRE2C3T6=GS2.1.s1792648272^$o7^$g0^$t1792648272^$j60^$l0^$h0; _ga_RWFSCPRGQM=GS2.1.s1792648274^$o4^$g0^$t1792648274^$j60^$l0^$h0; _clck=jsmsne%5E2%5Egaj%5E0%5E2464; _ga_Q9HV5JDQSP=GS2.1.s1792734248^$o37^$g0^$t1792734248^$j60^$l0^$h0; _gcl_au=1.1.1492713413.1790740989.-.-.1791882980.2026455489.1792652408.1792734249; _clsk=1de2j3a%5E1792734250167%5E1%5E1%5Et.clarity.ms%2Fcollect; _ga_4V9ZW4BQYF=GS2.1.s1792732018^$o15^$g1^$t1792734254^$j55^$l0^$h0; _ga_0Q3YBNDZVR=GS2.1.s1792734249^$o66^$g0^$t1792734254^$j55^$l0^$h0; _ga_30ST7XHRB9=GS2.1.s1792734249^$o65^$g0^$t1792734255^$j54^$l0^$h0; _ga_GCVH351BT5=GS2.1.s1792734255^$o44^$g0^$t1792734255^$j60^$l0^$h0; _ga_7SSB8DL7G0=GS2.1.s1792734289^$o32^$g0^$t1792734292^$j57^$l0^$h0; _ga_3EDCKLPFGW=GS2.1.s1792734290^$o31^$g0^$t1792734292^$j58^$l0^$h0"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"ClientCode\":\"wa5320\"}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://uatjplus.jainam.in/Profile/WebAPI/V1/DepositoryDetail/ListClientDematDetails",
+              "protocol": "https",
+              "host": [
+                "uatjplus",
+                "jainam",
+                "in"
+              ],
+              "path": [
+                "Profile",
+                "WebAPI",
+                "V1",
+                "DepositoryDetail",
+                "ListClientDematDetails"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "const CryptoJS = require('crypto-js');\r",
+          "\r",
+          "let secretToken = pm.collectionVariables.get(\"secretToken\");\r",
+          "if (!secretToken) {\r",
+          "    secretToken = pm.environment.get(\"secretToken\");\r",
+          "}\r",
+          "\r",
+          "if (!secretToken || secretToken.length < 48) {\r",
+          "    throw new Error(\"secretToken must be at least 48 characters (16 IV + 32 Key)\");\r",
+          "}\r",
+          "\r",
+          "const iv  = CryptoJS.enc.Utf8.parse(secretToken.substring(0, 16));\r",
+          "const key = CryptoJS.enc.Utf8.parse(secretToken.substring(16, 48));\r",
+          "\r",
+          "if (pm.request.body && pm.request.body.mode === \"raw\") {\r",
+          "    const rawBody = pm.request.body.raw;\r",
+          "\r",
+          "    if (rawBody && rawBody.trim() !== \"\") {\r",
+          "        const encrypted = CryptoJS.AES.encrypt(\r",
+          "            rawBody,\r",
+          "            key,\r",
+          "            {\r",
+          "                iv: iv,\r",
+          "                mode: CryptoJS.mode.CBC,\r",
+          "                padding: CryptoJS.pad.Pkcs7\r",
+          "            }\r",
+          "        ).toString();\r",
+          "\r",
+          "        // Send the encrypted string directly as raw body\r",
+          "        pm.request.body.raw = encrypted;\r",
+          "    }\r",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "const CryptoJS = require('crypto-js');\r",
+          "\r",
+          "// Read response\r",
+          "const responseText = pm.response.text().trim();\r",
+          "\r",
+          "// Detect plain JSON\r",
+          "if (responseText.startsWith(\"{\") || responseText.startsWith(\"[\")) {\r",
+          "    showJson(JSON.parse(responseText));\r",
+          "    return;\r",
+          "}\r",
+          "\r",
+          "// Get secret\r",
+          "const secretToken =\r",
+          "    pm.collectionVariables.get(\"secretToken\");\r",
+          "\r",
+          "if (!secretToken || secretToken.length < 48) {\r",
+          "    throw new Error(\"secretTokens missing or invalid\");\r",
+          "}\r",
+          "\r",
+          "// Build key & IV\r",
+          "const iv  = CryptoJS.enc.Utf8.parse(secretToken.substring(0, 16));\r",
+          "const key = CryptoJS.enc.Utf8.parse(secretToken.substring(16, 48));\r",
+          "\r",
+          "// Decrypt\r",
+          "const decrypted = CryptoJS.AES.decrypt(responseText, key, {\r",
+          "    iv: iv,\r",
+          "    mode: CryptoJS.mode.CBC,\r",
+          "    padding: CryptoJS.pad.Pkcs7\r",
+          "});\r",
+          "\r",
+          "const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);\r",
+          "\r",
+          "if (!decryptedText) {\r",
+          "    throw new Error(\"Decryption failed\");\r",
+          "}\r",
+          "\r",
+          "const json = JSON.parse(decryptedText);\r",
+          "\r",
+          "// Optional: store if needed later\r",
+          "pm.collectionVariables.set(\"decryptedResponse\", JSON.stringify(json));\r",
+          "\r",
+          "showJson(json);\r",
+          "\r",
+          "// ---------- helper ----------\r",
+          "function showJson(json) {\r",
+          "    pm.visualizer.set(`\r",
+          "        <style>\r",
+          "            body {\r",
+          "                font-family: Consolas, monospace;\r",
+          "                background: #1e1e1e;\r",
+          "                color: #d4d4d4;\r",
+          "                padding: 12px;\r",
+          "            }\r",
+          "            pre {\r",
+          "                white-space: pre-wrap;\r",
+          "                word-break: break-word;\r",
+          "                font-size: 13px;\r",
+          "            }\r",
+          "        </style>\r",
+          "        <pre>{{json}}</pre>\r",
+          "    `, {\r",
+          "        json: JSON.stringify(json, null, 2)\r",
+          "    });\r",
+          "}\r",
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BaseURL",
+      "value": "https://localhost:7016/api/v1/"
+    },
+    {
+      "key": "secretToken",
+      "value": ""
+    },
+    {
+      "key": "decryptedResponse",
+      "value": ""
+    },
+    {
+      "key": "UATurl",
+      "value": "https://uatjplus.jainam.in/Portfolio/WebAPI/api/v1/"
+    },
+    {
+      "key": "localURL",
+      "value": "https://localhost:7016/api/V1/"
+    },
+    {
+      "key": "LiveUrl",
+      "value": "https://jplus.jainam.in/Portfolio/WebAPI/api/v1/"
+    }
+  ]
+}
